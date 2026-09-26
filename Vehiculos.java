@@ -7,6 +7,15 @@ public class Vehiculos{
     private boolean disponibilidad;
     private int diasAlquilados;
 
+    public Vehiculos(String placa, String marca, String modelo, float tarifaDiaria, boolean disponibilidad, int diasAlquilados) {
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.tarifaDiaria = tarifaDiaria;
+        this.disponibilidad = disponibilidad;
+        this.diasAlquilados = diasAlquilados;
+    }
+
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
@@ -23,9 +32,12 @@ public class Vehiculos{
         return diasAlquilados;
     }
 
-    public float calcularTarifaParcial(){
-        float tarifaParcial = tarifaDiaria*diasAlquilados;
-        return tarifaParcial;
+    public String getPlaca() {
+    return placa;
+    }
+
+    public float calcularTarifaParcial(int diasAlquiladosCotiz){
+        return tarifaDiaria * diasAlquiladosCotiz;
     }
 
     public void devolverVehiculo(){
@@ -33,8 +45,12 @@ public class Vehiculos{
         disponibilidad = true;
     }
 
-    
-
-
+    public void getInfo() {
+        System.out.println("Placa: " + placa);
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Tarifa diaria: Q" + tarifaDiaria);
+        System.out.println("Disponible: " + disponibilidad);
+    }
 
 }
